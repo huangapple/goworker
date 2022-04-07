@@ -6,8 +6,14 @@ import (
 )
 
 var mqMap sync.Map
-var onErrorLog func(string)
-var onInfoLog func(string)
+var onErrorLog  = func(s string) {
+	fmt.Println(s)
+}
+var onInfoLog  = func(s string) {
+	fmt.Println(s)
+}
+
+
 
 func InitLog(onError func(string), onInfo func(string)) {
 	onErrorLog = onError
